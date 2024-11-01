@@ -1,0 +1,433 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Logo Centered */
+header .logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align the logo with the bottom of the header */
+}
+
+header .logo img {
+    max-width: 600px; /* Larger logo */
+    height: auto;
+}
+
+/* Navigation Links on Each Side */
+header nav {
+    display: flex;
+    gap: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: calc(100% - 48px); /* Adjust the positioning to align with the bottom of the logo */
+    transform: translateY(0%);
+}
+
+header .nav-left {
+    left: 20px;
+}
+
+header .nav-right {
+    right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #f95f0c;
+}
+
+/* Mobile Responsive Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    header .logo {
+        order: 2;
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    header .logo img {
+        max-width: 300px;
+    }
+
+    header nav {
+        position: static;
+        font-size: 18px;
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+    }
+
+    .nav-left, .nav-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        max-width: 250px;
+    }
+
+    header nav {
+        font-size: 16px;
+        gap: 10px;
+    }
+}
+.hero-text .hours {
+    font-size: 16px;
+    color: #f95f0c;
+    margin-top: 10px;
+}
+/* Text Styling */
+h1, h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 8px;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    max-width: 150%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form input {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    color: #333;
+}
+
+form button {
+    background-color: rgba(249, 95, 12, 0.8);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e64d1f;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+    width: 95%; /* Wider gallery section */
+    border-radius: 8px;
+    max-width: 1200px; /* Increased max-width for larger display */
+}
+
+.gallery h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery h1 {
+        font-size: 36px;
+    }
+}
+
+/* Restaurant Atmosphere Section */
+.restaurant-atmosphere {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 8px;
+}
+
+.restaurant-atmosphere h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.restaurant-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Menu Section */
+.menu {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.menu h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.menu-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: rgba(249, 95, 12, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-section ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.menu-section ul li strong {
+    font-weight: bold;
+    color: rgba(249, 95, 12, 0.8);
+}
+
+/* Search Bar Container Styling */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.search-bar-logo-text {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.search-text {
+    font-size: 18px;
+    color: #fff;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(249, 95, 12, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #e64d1f;
+}
+
+/* Menu Navigation Styling */
+.menu-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    width: 90%;
+}
+
+.menu-navigation label {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#menu-sections {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(249, 95, 12, 0.8);
+    color: white;
+    cursor: pointer;
+}
+
+#menu-sections:hover {
+    background-color: #e64d1f;
+}
+
+#menu-sections option {
+    background-color: #333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .menu-navigation {
+        width: 100%;
+    }
+
+    #menu-sections {
+        width: 100%;
+    }
+}
